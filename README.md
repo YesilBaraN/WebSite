@@ -4,8 +4,8 @@ PROJENİN AMACI :Kendimi ve yaşadığım şehri anlatan bir site.
 KULLANILAN DİLLER:                                                                                                                                                                                                                            
 HTML                                                                                                                                                                                                                                         
 CSS            
-JAVASCRİPt
-PHP            
+JAVASCRİPT            
+PHP                                    
 Genel bilgilerin bulunduğu bir ana sayfa ile karşılaşılacak            
 HAKKINDA bölümünde hobilerim uğraştığıım işle ve bununla ilgli fotoğrafları koyacağım            
 ÖZGEÇMİŞ bölümünde cv bilgilerim ve eğitim bilgilerimi içinde bulunduracağım            
