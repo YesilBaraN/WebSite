@@ -1,0 +1,16 @@
+document.addEventListener('DOMContentLoaded', function() {
+  var menuIcon = document.getElementById('menu_icon');
+  var navLinks = document.querySelector('.nav_links');
+
+  menuIcon.addEventListener('click', function() {
+      // Alt menüyü seç
+      var subMenu = document.querySelector('.nav_links');
+
+      // Alt menü görünüyorsa gizle, görünmüyorsa göster
+      if (subMenu.style.display === 'none') {
+          subMenu.style.display = 'block';
+      } else {
+          subMenu.style.display = 'none';
+      }
+  });
+});

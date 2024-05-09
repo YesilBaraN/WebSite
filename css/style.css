@@ -1,137 +1,231 @@
 /* Genel Stiller */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
 html {
-    scroll-behavior: smooth;
-     /* Scrollbar Tasarımı */
+  scroll-behavior: smooth;
+}
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
 
-  }
-  
- 
-  * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-  }
-  
-  body {
-    font-family: "Sedan SC", serif;
-    overflow-y: scroll; /* Dikey scrollbar ekler */ 
-  }
-  
-  img {
-    width: 100%;
-  }
-  
-  section {
-    padding: 100px 0;
-    background: #00ff62;
-  }
-  
-  .section_title {
-    margin-bottom: 30px;
-  }
-  
-  .section_title h2 {
-    position: relative;
-    text-align: center;
-    color: #000000;
-    font-size: 30px;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .section_title h2:hover {
-    background: #0080ff;
-  }
-  
-  /* HEADER */
-  header {
-    background: #ffffa4;
-    border-bottom: 2px solid rgba(255, 0, 0, 0.801);
-    position: fixed;
-    width: 100%;
-    z-index: 3;
-  }
-  
-  /* NAVBAR */
+
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Sedan SC", serif;
+  overflow-y: scroll;
+  margin: 0; /* Body'nin varsayılan marjını kaldır */
+}
+
+img {
+  max-width: 100%; /* Görüntülerin taşma yapmasını önle */
+  height: auto; /* Oranları koruyarak görüntülerin boyutunu ayarla */
+}
+
+section {
+  padding: 100px 0;
+  background: #00ff62;
+}
+
+.section_title {
+  margin-bottom: 30px;
+}
+
+.section_title h2 {
+  position: relative;
+  text-align: center;
+  color: #000000;
+  font-size: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.section_title h2:hover {
+  background: #0080ff;
+}
+
+/* HEADER */
+header {
+  background: #ffffa4;
+  border-bottom: 2px solid rgba(255, 0, 0, 0.801);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%; /* Full width on large screens */
+  padding: 15px 0;
+  text-align: center;
+}
+
+.nav_links {
+  display: flex;
+}
+
+.nav_links li {
+  margin-left: 20px; /* Boşluk eklemek için */
+}
+
+.nav_links li a {
+  text-align: center;
+  color: #000;
+  padding: 5px 15px;
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+}
+
+.nav_links li a:hover {
+  background-color: #ff0080;
+}
+
+.logo h2 a {
+  color: #000;
+  text-transform: uppercase;
+}
+
+
+
+
+/* Metin Ortalama */
+.nav_links li a {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+}
+
+/* Kendimi Tanıtma */
+.about-section {
+  display: flex;
+  flex-wrap: wrap; /* Kartları yan yana sıralamak için */
+  justify-content: center;
+  padding: 50px 20px;
+}
+.card {
+  /* Diğer stiller */
+  display: flex;
+}
+
+.card img {
+  /* Diğer stiller */
+  flex: 1; /* Resmi esnek hale getir */
+  margin-right: 20px; /* Resmin sağında bir boşluk bırak */
+}
+
+.card .card-body {
+  /* Diğer stiller */
+  flex: 2; /* Metin içeriğini resme göre ayarla */
+}
+
+.card h4, .card p {
+  /* Diğer stiller */
+  text-align: left; /* Metin içeriğini sola hizala */
+}
+.card {
+  width: calc(50% - 40px); /* Dikdörtgenlerin genişliği (2 tane yan yana) ve aralarındaki boşluk */
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px; /* Kartlar arası boşluk */
+  box-sizing: border-box;
+  margin-top: 40px;
+}
+
+.card:first-child {
+  margin-top: 50px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.card h4 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.card p {
+  font-size: 14px;
+  color: #666;
+}
+
+/*------------HEADER---------------*/
+
+@media screen and (max-width: 770px) {
   .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    width: 100%; /* Full width on large screens */
-    padding: 15px 0;
-    text-align: center;
+    width: 90%; /* Ekran küçüldüğünde menünün genişliğini ayarla */
   }
-  
+
+  .logo h2 {
+    font-size: 15px; /* Logo metninin boyutunu küçült */
+  }
+
   .nav_links {
-    display: flex;
+    display: none; /* Küçük ekranlarda menüyü gizle */
+    flex-direction: column;
+    position: absolute;
+    background: #ffffa4;
+    width: 100%;
+    left: 0;
+    padding: 0;
+    top: 60px; /* Menünün üst boşluğunu ayarla */
   }
-  
+
   .nav_links li a {
+    border-bottom: 1px solid #00ff33;
+    display: block;
+    padding: 10px 0;
+    margin: 0 20px;
     text-align: center;
-    margin-left: 20px;
-    color: #000;
-    padding: 5px 15px;
-    border-radius: 5px;
-    transition: all 0.5s ease-in-out;
   }
-  
-  .nav_links li a:hover {
-    background-color: #ff0080; /* Hover renk değişikliği */
+
+  .nav_links li:last-child a {
+    border-bottom: none;
   }
-  
-  .logo h2 a {
-    color: #000;
-    text-transform: uppercase;
+
+  #menu_icon {
+    display: block; /* Küçük ekranlarda menü ikonunu göster */
+    color: #00ff33;
+    position: absolute;
+    right: 5%;
+    top: 20px;
+    cursor: pointer;
+    z-index: 9999; /* Menü ikonunu en üstte göster */
   }
-  
-  /* Responsive Değişiklikler */
-  @media (max-width: 992px) { /* Tabletler için 992px kırılma noktası */
-    /* Ekran genişliği 992px'den küçük olduğunda */
-    .navbar {
-      flex-wrap: wrap; /* Menü öğelerini alta sıralar */
-      justify-content: space-between; /* Yatay olarak ikiye böler */
-    }
-  
-    .nav_links {
-      /* Menü öğelerini yatay olarak sıralar */
-      flex-direction: column;
-      align-items: center;
-      margin-top: 20px; /* Üst boşluk ekler */
-    }
-  
-    .nav_links li {
-      margin: 5px 0; /* Menü öğeleri arasında boşluk ekler */
-    }
-  
-    .nav_links li a {
-      /* Daha fazla okunabilirlik için padding azaltır */
-      padding: 10px;
-    }
-  
-    .menu-icon {
-      display: block; /* Küçük ekranlarda menü simgesini gösterir */
-      font-size: 24px;
-      cursor: pointer; /* Menü simgesinin üzerine gelince imleci değiştirir */
-    }
+}
+
+@media screen and (min-width: 771px) {
+  .nav_links {
+    display: flex !important; /* Menüyü tekrar görünür hale getir */
+    position: static; /* Pozisyonu normal haline getir */
+    background: none; /* Arka plan rengini kaldır */
+    width: auto; /* Genişliği otomatik olarak ayarla */
+    top: auto; /* Üst boşluğu kaldır */
   }
-  
-  @media (min-width: 993px) { /* 993px ve üzeri ekranlarda menü simgesini gizle */
-    .menu-icon {
-      display: none;
-    }
+
+  #menu_icon {
+    display: none; /* Menü ikonunu gizle */
   }
-  
-  /* Metin Ortalama */
-  .nav_links li a { /* Tüm navigasyon linklerini hedefle */
-    text-align: center; /* Metni yatay olarak ortala */
-    display: flex; /* Esnek konteyner oluştur */
-    align-items: center; /* Dikey olarak ortala */
-    justify-content: center; /* Yatay olarak ortala */
-    min-height: 50px; /* Minimum yükseklik ayarla */}
+}
 
 
 
-   /*----Kendimi Tanıtma-----*/
-   
