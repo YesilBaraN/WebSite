@@ -4,14 +4,12 @@
 html {
   scroll-behavior: smooth;
 }
+
 .roboto-light {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-style: normal;
 }
-
-
-
 
 * {
   padding: 0;
@@ -98,9 +96,6 @@ header {
   text-transform: uppercase;
 }
 
-
-
-
 /* Metin Ortalama */
 .nav_links li a {
   text-align: center;
@@ -113,63 +108,75 @@ header {
 /* Kendimi Tanıtma */
 .about-section {
   display: flex;
-  flex-wrap: wrap; /* Kartları yan yana sıralamak için */
-  justify-content: center;
-  padding: 50px 20px;
+  justify-content: space-between;
 }
+
 .card {
-  /* Diğer stiller */
-  display: flex;
-}
-
-.card img {
-  /* Diğer stiller */
-  flex: 1; /* Resmi esnek hale getir */
-  margin-right: 20px; /* Resmin sağında bir boşluk bırak */
-}
-
-.card .card-body {
-  /* Diğer stiller */
-  flex: 2; /* Metin içeriğini resme göre ayarla */
-}
-
-.card h4, .card p {
-  /* Diğer stiller */
-  text-align: left; /* Metin içeriğini sola hizala */
-}
-.card {
-  width: calc(50% - 40px); /* Dikdörtgenlerin genişliği (2 tane yan yana) ve aralarındaki boşluk */
+  
+  width: 100%; /* Kartların genişliğini yarıya indir ve kenar boşluğunu ayarla */
   background-color: #f0f0f0;
-  padding: 20px;
+  padding:  20px;
   border-radius: 10px;
-  margin: 20px; /* Kartlar arası boşluk */
   box-sizing: border-box;
-  margin-top: 40px;
+  margin-left: 20px;
+}
+.card:last-child {
+  margin-right: 0; /* Son kartın sağ kenar boşluğunu kaldır */
 }
 
-.card:first-child {
-  margin-top: 50px;
+
+.card-img-top {
+  object-fit: cover; /* Resmi, orantıları koruyarak sığacak şekilde ölçekleyin */
+  margin-right: 20px; /* Fotoğrafın sağ tarafındaki boşluğu artır */
 }
 
-.card img {
+.card-body {
+ 
+  flex-direction: column; /* İçeriği dikey düzende göster */
+  justify-content: flex-end; /* İçerikleri altta hizala */
+  align-items: flex-start; /* İçeriği sola yatayda hizala */
+  background-color: #fff; /* Kartın arka plan rengini beyaz yap */
+  padding: 20px;
+  border-radius: 0 0 5px 5px; /* Kenarlık stilini ayarla */
+
+  background-color: #fff; /* Kartın arka plan rengini beyaz yap */
+  padding: 20px;
+  border-radius: 0 0 5px 5px; /* Kenarlık stilini ayarla */
+}
+
+.card-title {
+  margin-bottom: 10px; /* Başlık ile metin arasına boşluk ekleyin */
+  font-size: 18px; /* Başlık font boyutunu ayarla */
+}
+
+.card-text {
+  font-size: 14px; /* Metin font boyutunu ayarla */
+  margin-top: 10px; /* Metin ile fotoğraf arasına boşluk ekleyin */
+  flex: 1; /* Metnin fotoğrafın altında kalan alanı doldurmasını sağlayın */
+}
+.card-table {
   width: 100%;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  border-collapse: collapse;
+  table-layout: fixed;
 }
 
-.card h4 {
-  font-size: 18px;
-  font-weight: bold;
-  color: #000000;
+.card-table td {
+  width: 25%; /* Eşit sütun genişliği için */
+  padding: 10px;
+  vertical-align: top;
 }
 
-.card p {
-  font-size: 14px;
-  color: #666;
+table {
+  width: 50%;
+  border-collapse: collapse;
 }
 
+th, td {
+  width: 50%;
+  padding: 10px;
+  vertical-align: top;
+}
 /*------------HEADER---------------*/
-
 @media screen and (max-width: 770px) {
   .navbar {
     width: 90%; /* Ekran küçüldüğünde menünün genişliğini ayarla */
@@ -226,6 +233,3 @@ header {
     display: none; /* Menü ikonunu gizle */
   }
 }
-
-
-
