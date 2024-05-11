@@ -2,8 +2,13 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
 html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
   scroll-behavior: smooth;
 }
+
+
 
 .roboto-light {
   font-family: "Roboto", sans-serif;
@@ -48,7 +53,7 @@ section {
 }
 
 .section_title h2:hover {
-  background: #0080ff;
+  background: #5f5f60;
 }
 
 /* HEADER */
@@ -92,6 +97,7 @@ header {
 }
 
 .logo h2 a {
+  margin-left: 20px;
   color: #000;
   text-transform: uppercase;
 }
@@ -111,45 +117,60 @@ header {
   justify-content: space-between;
 }
 
-.card {
+.card-container {
   
-  width: 100%; /* Kartların genişliğini yarıya indir ve kenar boşluğunu ayarla */
+  display: grid; /* Kartları grid'de düzenleyin */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Her sütunun minimum genişliğini 300px olarak ayarlayın ve kalan alanı eşit şekilde dağıtın */
+  gap: 20px; /* Kartlar arasına boşluk ekleyin */
+}
+
+
+
+.card {
+  flex: 1;
+  width: calc(70% - 20px); /* Kartların genişliğini dörtte biri kadar ayarla */
+  margin-bottom: 20px; /* Kartlar arasına boşluk ekle */
   background-color: #f0f0f0;
-  padding:  20px;
+  padding: 20px;
   border-radius: 10px;
   box-sizing: border-box;
-  margin-left: 20px;
+  overflow: hidden; /* Kartın içeriğinin taşmasını engelle */
 }
+
 .card:last-child {
   margin-right: 0; /* Son kartın sağ kenar boşluğunu kaldır */
 }
 
 
 .card-img-top {
-  object-fit: cover; /* Resmi, orantıları koruyarak sığacak şekilde ölçekleyin */
-  margin-right: 20px; /* Fotoğrafın sağ tarafındaki boşluğu artır */
+ 
+  width: 100%; /* Resmi kartın genişliğine sığacak şekilde ayarla */
+  height: px; /* Resmin yüksekliğini sabit tut */
+  border-radius: 10px 10px 0 0; /* Yalnızca üst kenarlara yuvarlaklık ekle */
 }
 
 .card-body {
- 
-  flex-direction: column; /* İçeriği dikey düzende göster */
-  justify-content: flex-end; /* İçerikleri altta hizala */
-  align-items: flex-start; /* İçeriği sola yatayda hizala */
-  background-color: #fff; /* Kartın arka plan rengini beyaz yap */
+  border-radius:0 0 10px 10px ;
+  background-color: #cc9b9b;
   padding: 20px;
-  border-radius: 0 0 5px 5px; /* Kenarlık stilini ayarla */
-
-  background-color: #fff; /* Kartın arka plan rengini beyaz yap */
-  padding: 20px;
-  border-radius: 0 0 5px 5px; /* Kenarlık stilini ayarla */
+  
 }
 
 .card-title {
+  
+  text-align: center;
+  padding: 2%;
   margin-bottom: 10px; /* Başlık ile metin arasına boşluk ekleyin */
-  font-size: 18px; /* Başlık font boyutunu ayarla */
+  font-size: 95%; /* Başlık font boyutunu ayarla */
+  
+}
+.card-body p{
+  margin-bottom: 0;
 }
 
 .card-text {
+  line-height: 1.5; /* Metnin satır aralığını ayarla */
+  text-align: left;
   font-size: 14px; /* Metin font boyutunu ayarla */
   margin-top: 10px; /* Metin ile fotoğraf arasına boşluk ekleyin */
   flex: 1; /* Metnin fotoğrafın altında kalan alanı doldurmasını sağlayın */
@@ -218,6 +239,18 @@ th, td {
     cursor: pointer;
     z-index: 9999; /* Menü ikonunu en üstte göster */
   }
+   /* Yazı boyutunu küçült */
+   .card-title {
+   
+    font-size: calc(18px * 0.8);
+  }
+
+  .card-text {
+    font-size: calc(14px * 0.8);
+  }
+
+
+
 }
 
 @media screen and (min-width: 771px) {
@@ -232,4 +265,84 @@ th, td {
   #menu_icon {
     display: none; /* Menü ikonunu gizle */
   }
+}
+
+
+.container_cv {
+  margin: 150px 100px 0px 100px;
+  display: flex;
+  
+}
+
+.dikdortgen {
+ position: relative;
+  border-radius: 10px;
+  width: 90%;
+  height: 600px;
+  background-color: rgb(5, 166, 219);
+  box-sizing: border-box;
+  display:inline-flex;
+  
+
+}
+
+.dikdortgen.dar {
+  width: 300%;
+  background-color: #b09898;
+}
+
+.profil_foto {
+
+  margin-top: 20px;
+  width: 55%;
+  height: 30%;
+  border-radius: 50%;
+  object-fit: fill;
+  position: relative;
+  top: -80px;
+  left:23%;
+  border: 5px solid white;
+}
+
+.iletişim_bilgileri {
+  position: relative;
+  top: 130px;
+  transform: translateX(-50%);
+
+
+}
+
+.iletişim_bilgileri ul li {
+
+  margin-bottom: 5px; /* Burada boşluk ekleyin */
+}
+
+.iletişim_yazı {
+  border-bottom: 1px solid #000000; /* Başlık altına çizgi ekle */
+  margin-bottom: 10px;
+  font-size: 250%;
+
+}
+
+.icon {
+  padding-left: 10px;
+}
+
+.text_iletişim {
+  padding-left: 2px;
+  font-size: 150%;
+}
+
+.diller{
+  font-size: 250%;
+  border-bottom: 1px solid #000000; /* Başlık altına çizgi ekle */
+  margin-top: 30px;
+  margin-bottom: 10px;
+  margin-left: 20p;
+ 
+}
+
+.text_diller {
+  font-size: 12px; /* Yazı boyutunu ayarla */
+  text-align: center; /* Metni ortala */
 }

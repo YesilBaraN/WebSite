@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:slnt@-4&family=Roboto:wght@300&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXqP6hMVIv/lBuvqO6P3y" crossorigin="anonymous">
+  <script src="js/script"></script>
+  <title>Ana Sayfa</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <h2><a href="#">Baran Yeşilyurt</a></h2>
+      </div>
+      <div id="menu_bar">
+        <i class="fas fa-bars" id="menu_icon"></i>
+      </div> 
+      <ul class="nav_links">
+        <li><a href="html">HAKKINDA</a></li>
+        <li><a href="OzgecmisCV">ÖZGEÇMİŞ</a></li>
+        <li><a href="şehrim.html">ŞEHRİM</a></li>
+        <li><a href="mirasımız.html">MİRAZSIMIZ</a></li>
+        <li><a href="ilgialanlarım.html">İLGİ ALANLARIM</a></li>
+        <li><a href="iletişim.html">İLETİŞİM</a></li>
+        <li><a href="logın.html">LOG IN</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container_cv">
+    <div class="dikdortgen">
+      <img src="image/profilFoto.jpg" class="profil_foto" alt="...">
+      <div class="iletişim_bilgileri">
+        <h2 class="iletişim_yazı">İletişim Bilgileri</h2>
+        <ul>
+          <li>
+            <span class="icon"><i class="fas fa-phone"></i></span>
+            <span class="text_iletişim">+90 546 636 59 92</span>
+          </li>
+          <li>
+            <a href="mailto:ornek@ornek.com">
+              <span class="icon"><i class="fas fa-envelope"></i></span>
+              <span class="text_iletişim">ornek@ornek.com</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/kullanıcı-adı">
+              <span class="icon"><i class="fab fa-linkedin"></i></span>
+              <span class="text_iletişim">LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/kullanıcı-adı">
+              <span class="icon"><i class="fab fa-instagram"></i></span>
+              <span class="text_iletişim">Instagram</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/kullanıcı-adı">
+              <span class="icon"><i class="fab fa-github"></i></span>
+              <span class="text_iletişim">GitHub</span>
+            </a>
+          </li>
+        </ul>
+        <ul>
+        <h2 class="diller">Diller</h2>
+            <li class="text_diller">İngilizce / Orta Seviye
+            </li>
+        </ul>
+
+        
+      </div>
+    </div>
+    <div class="dikdortgen dar"></div>
+  </div>
+</body>
+</html>
