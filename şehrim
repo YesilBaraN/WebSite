@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:slnt@-4&family=Roboto:wght@300&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXqP6hMVIv/lBuvqO6P3y" crossorigin="anonymous">
+  <script src="js/script"></script>
+  <title>Ana Sayfa</title>
+ </head>
+ <body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <h2><a href="#">Baran Yeşilyurt</a></h2>
+      </div>
+      <div id="menu_bar">
+        <i class="fas fa-bars" id="menu_icon"></i>
+      </div>
+      <ul class="nav_links">
+        <li><a href="html">HAKKINDA</a></li>
+        <li><a href="OzgecmisCV">ÖZGEÇMİŞ</a></li>
+        <li><a href="şehrim">ŞEHRİM</a></li>
+        <li><a href="mirasımız.html">MİRAZSIMIZ</a></li>
+        <li><a href="ilgialanlarım.html">İLGİ ALANLARIM</a></li>
+        <li><a href="iletişim.html">İLETİŞİM</a></li>
+        <li><a href="logın.html">LOG IN</a></li>
+      </ul>
+    </nav>
+  </header>
+  </body>
+  <body>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+          <div class="numbertext">1 / </div>
+          <a href="https://www.kocaeli.bel.tr/"><img src="image/Şehrim/kocaeli.jpg" style="width:100%">
+          <div class="text">Manzara</div>
+        </div>
+      
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 5</div>
+          <a href="http://www.izmit.gov.tr/izmit-saat-kulesi"><img src="image/Şehrim/izmitsaatkulesi.jpg" style="width:100%"></a>
+          <div class="text">İzmit Saat Kulesi</div>
+        </div>
+      
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 5</div>
+          <a href="https://www.kulturportali.gov.tr/turkiye/kocaeli/gezilecekyer/tcg-gayret-muzesi---zmit"><img src="image/Şehrim/gayretgemimüzesi.jpg" style="width:100%"></a>
+          <div class="text">Gayret Gemi Müzesi</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 5</div>
+            <a href="https://www.kulturportali.gov.tr/turkiye/kocaeli/gezilecekyer/yuvacik-baraji-basiskele"><img src="image/Şehrim/yuvacıkbarajı.jpg" style="width:100%"></a>
+            <div class="text">Yuvacık Barajı</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">5 / 5</div>
+          <a href="https://www.kulturportali.gov.tr/turkiye/kocaeli/gezilecekyer/pembe-kayalar"><img src="image/Şehrim/pembekayalıkalr.jpg" style="width:100%"></a>
+          <div class="text">Pembe Kayalıklar</div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+      </div>
+      
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>  
+      </div>
+    </div>
+  </body>
+  
+
+</html>

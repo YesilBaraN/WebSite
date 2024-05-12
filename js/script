@@ -14,3 +14,71 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   });
 });
+
+window.addEventListener("resize", adjustCardHeights);
+adjustCardHeights();
+
+function adjustCardHeights() {
+  var cards = document.querySelectorAll(".card");
+  var maxHeight = 0;
+  cards.forEach(function(card) {
+    var cardBody = card.querySelector('.card-body');
+    cardBody.style.height = 'auto';
+    if (cardBody.offsetHeight > maxHeight) {
+      maxHeight = cardBody.offsetHeight;
+    }
+  });
+  cards.forEach(function(card) {
+    var cardBody = card.querySelector('.card-body');
+    cardBody.style.height = maxHeight + 'px';
+  });
+}
+
+
+window.onload = function() {
+  eşitYükseklikAyarla();
+  window.addEventListener('resize', eşitYükseklikAyarla);
+};
+
+window.addEventListener("scroll", function() {
+  var navbar = document.querySelector("header");
+  navbar.classList.toggle("sticky", window.scrollY > 0);
+});
+
+const slides = document.querySelectorAll('.slide');
+const slider = document.querySelector('.slider');
+let counter = 1;
+
+setInterval(() => {
+  counter++;
+  if (counter >= slides.length) counter = 0;
+  slider.style.transform = `translateX(${-counter * 100}%)`;
+}, 3000);
+
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
