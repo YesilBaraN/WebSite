@@ -517,14 +517,19 @@ margin-left: 84px;
 
 /* ------ŞEHRİM-------*/
 
-/* Slideshow container */
-.mySlides {display: none}
+img {
+  vertical-align: middle;
+  
+}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  width: 100%;
   position: relative;
-  margin: auto;
+  margin-top: 40px;
+  overflow: hidden;
+  height: auto;
+  
 }
 
 /* Next & previous buttons */
@@ -540,7 +545,7 @@ margin-left: 84px;
   font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
-  user-select: none;
+ 
 }
 
 /* Position the "next button" to the right */
@@ -565,7 +570,7 @@ margin-left: 84px;
   text-align: center;
 }
 
-/* Number text (1/3 etc) */
+/* Number text (1/5 etc) */
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
@@ -597,11 +602,76 @@ margin-left: 84px;
 }
 
 @keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
 }
 
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
+  .prev, .next, .text {
+    font-size: 11px
+  }
 }
+
+
+.container_şehrimiz {
+  background-image: url();
+  max-width: 800px; /* Container genişliği */
+  margin: 20px; /* Ortala */
+  padding: 20px; /* Kenar boşlukları */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Gölge */
+}
+
+.container_şehrimiz h2 {
+  color: #333; /* Başlık rengi */
+  font-size: 24px; /* Başlık boyutu */
+  margin-bottom: 10px; /* Başlık alt boşluk */
+}
+
+.container_şehrimiz p {
+  color: #cc0e0e; /* Metin rengi */
+  font-size: 16px; /* Metin boyutu */
+  line-height: 1.6; /* Satır aralığı */
+}
+
+
+.container_kocaeli, .container_saat_kulesi, .container_gemi_müzesi, .container_yuvacık_barajı, .container_pembe_kayalar {
+  margin-bottom: 20px; /* Bölümler arası boşluk */
+ 
+    background-size: cover; /* Resmi container'a sığdır */
+    background-position: center; /* Resmi ortala */
+    
+}
+
+
+.container_kocaelispor {
+  position: relative;
+  size: 10px;
+
+
+  padding: 40;
+  border-radius: 10px  10px  10px ;
+  font-size: 150%;
+  background: url('../image/takımımız/kocaelispor-logo.jpg');
+  background-size:100% 90%;  
+}
+.text_kocaelibaşlık{
+  color: rgb(252, 214, 214);
+
+}
+
+.text_kocaelispor{
+  color: rgb(252, 214, 214);
+}
+.başlık_kocaeli{
+ 
+  text-align: center;
+}
+
+
+
