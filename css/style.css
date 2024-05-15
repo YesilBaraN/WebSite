@@ -2,7 +2,7 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
 html {
-  font-size: 62.5%;
+  
   overflow-y: scroll; /* Yalnızca dikey kaydırmayı etkinleştir */
   
 }
@@ -20,13 +20,7 @@ html {
   margin: 0;
   box-sizing: border-box;
   list-style: none;
-  text-decoration: none;
-}
-
-body {
-  font-family: "Sedan SC", serif;
-  overflow: hidden;
-  margin: 0; /* Body'nin varsayılan marjını kaldır */
+ 
 }
 
 img {
@@ -36,7 +30,7 @@ img {
 
 section {
   padding: 100px 0;
-  background: #00ff62;
+ 
 }
 
 .section_title {
@@ -652,26 +646,273 @@ img {
 .container_kocaelispor {
   position: relative;
   size: 10px;
-
-
-  padding: 40;
-  border-radius: 10px  10px  10px ;
-  font-size: 150%;
-  background: url('../image/takımımız/kocaelispor-logo.jpg');
-  background-size:100% 90%;  
+  padding: 60;
+ 
+  font-size: 160%;
+  background: url('../image/takımımız/kocaelispor-logo.jpg') no-repeat center;
+  background-size:100% 100%; 
+  opacity: 0.7;  
 }
 .text_kocaelibaşlık{
-  color: rgb(252, 214, 214);
+  color: rgb(255, 255, 255);
 
 }
 
 .text_kocaelispor{
-  color: rgb(252, 214, 214);
+  color: rgb(255, 255, 255);
 }
 .başlık_kocaeli{
+  color: rgb(255, 255, 255);
  
   text-align: center;
 }
 
 
+/*--------iletişim---------*/
 
+.iletişim_body{
+  background-color: #234860;
+}
+
+#iletişim {
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+}
+
+.container_iletişim {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.başlık_iletişim {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #ffffff;
+}
+
+.iletişim_area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Yeni eklenen satır - elemanların sıralamasını düzenler */
+}
+
+.iletişim_sol,
+.iletişim_sağ {
+  width: 100%; /* Değiştirildi - responsive olması için */
+  padding: 1rem; /* Değiştirildi - daha küçük ekranlarda daha az boşluk */
+}
+
+.iletişim_üst {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #ffffff;
+}
+
+.iletişim_elemanları {
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.iletişim_elemanları i {
+  color: #ffffff;
+  padding: 0.7rem;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  transition: all 0.4s ease;
+  display: flex; /* İkonları içerikle aynı hizada olacak şekilde ayarla */
+  justify-content: center; /* İkonları dikey olarak ortala */
+  align-items: center; /* İkonları dikey olarak ortala */
+}
+
+.iletişim_elemanları i:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.iletişim_elemanları a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.iletişim_alt {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.iletişim_alt a {
+  padding: 20px;
+  color: #ffffff;
+  width:4rem ;
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  font-size: 1.5rem;
+  background-color: #181818;
+  border-radius: 40%;
+}
+
+.iletişim_alt a:hover {
+  color: #181818;
+  background-color: #ffffff;
+}
+
+.iletişim_sağ form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.iletişim_sağ form input,
+.iletişim_sağ form textarea,
+.iletişim_sağ form button {
+  width: 100%;
+  margin: 1rem 0;
+  background-color: transparent;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  transition: all 0.4s ease;
+}
+
+.iletişim_sağ form button {
+  background-color: #ffffff;
+  color: #011627;
+  cursor: pointer;
+}
+
+.iletişim_sağ form button:hover {
+  background-color: #234860;
+  color: #ffffff;
+}
+
+.iletişim_sağ form input:hover,
+.iletişim_sağ form textarea:hover {
+  color: #011627;
+  background-color: #ffffff;
+}
+
+.iletişim_sağ form input:focus,
+.iletişim_sağ form textarea:focus {
+  color: #011627;
+  background-color: #ffffff;
+}
+
+
+
+
+body.login_body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background: #141414;
+  font-family: Arial, sans-serif;
+}
+
+.container_login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.login-box {
+  position: relative;
+  width: 300px;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.login-box h2 {
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.user-box {
+  position: relative;
+}
+
+.user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.user-box input:focus ~ label,
+.user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+button {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #03e9f4;
+  background: #03e9f4;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: 0.5s;
+}
+
+button:hover {
+  background: #03a9f4;
+  color: #fff;
+}
+
+.spinner {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}

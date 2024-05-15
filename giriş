@@ -1,0 +1,53 @@
+<html lang="tr">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:slnt@-4&family=Roboto:wght@300&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXqP6hMVIv/lBuvqO6P3y" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <title>Ana Sayfa</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <h2><a href="#">Baran Yeşilyurt</a></h2>
+      </div>
+      <div id="menu_bar">
+        <i class="fas fa-bars" id="menu_icon"></i>
+      </div>
+      <ul class="nav_links">
+        <li><a href="html">HAKKINDA</a></li>
+        <li><a href="OzgecmisCV">ÖZGEÇMİŞ</a></li>
+        <li><a href="şehrim">ŞEHRİM</a></li>
+        <li><a href="mirasımız.html">MİRAZSIMIZ</a></li>
+        <li><a href="ilgialanlarım.html">İLGİ ALANLARIM</a></li>
+        <li><a href="iletişim.html">İLETİŞİM</a></li>
+        <li><a href="logın.html">LOG IN</a></li>
+      </ul>
+    </nav>
+  </header>
+</body>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 class="mt-5">Login</h2>
+                <form name="loginForm" action="login.php" method="post" onsubmit="return validateForm()">
+                    <div class="form-group">
+                        <label for="username">Kullanıcı Adı</label>
+                        <input type="email" class="form-control" id="username" name="username" placeholder="Kullanıcı Adı">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Şifre</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Şifre">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/script"></script>
+</html>
