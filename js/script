@@ -15,30 +15,31 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-window.addEventListener("resize", adjustCardHeights);
-adjustCardHeights();
+window.onload = function() {
+  adjustCardHeights();
+  window.addEventListener('resize', adjustCardHeights);
+};
 
 function adjustCardHeights() {
   var cards = document.querySelectorAll(".card");
   var maxHeight = 0;
   cards.forEach(function(card) {
     var cardBody = card.querySelector('.card-body');
-    cardBody.style.height = 'auto';
-    if (cardBody.offsetHeight > maxHeight) {
-      maxHeight = cardBody.offsetHeight;
+    if (cardBody) {
+      cardBody.style.height = 'auto';
+      if (cardBody.offsetHeight > maxHeight) {
+        maxHeight = cardBody.offsetHeight;
+      }
     }
   });
   cards.forEach(function(card) {
     var cardBody = card.querySelector('.card-body');
-    cardBody.style.height = maxHeight + 'px';
+    if (cardBody) {
+      cardBody.style.height = maxHeight + 'px';
+    }
   });
 }
 
-
-window.onload = function() {
-  eşitYükseklikAyarla();
-  window.addEventListener('resize', eşitYükseklikAyarla);
-};
 
 window.addEventListener("scroll", function() {
   var navbar = document.querySelector("header");
@@ -71,14 +72,101 @@ function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
+    slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
+  if (slides[slideIndex - 1]) {
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+  }
 }
+
+/*----------İLETİŞİM---------*/
+/*--------TEMİZLE BUTONU--------*/
+function clearForm() {
+  document.getElementById("text").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("message").value = "";
+}
+
+/*----------GÖNDER BUTONU--------------*/
+/*-------vue.js--------*/
+
+
+/*---------JAVASCRİPT---------*/
+
+
+    function validateFormJS() {
+        var isimSoyisim = document.getElementById("isimSoyisim").value;
+        var email = document.getElementById("email").value;
+        var mesaj = document.getElementById("mesaj").value;
+
+        if (isimSoyisim.trim() === "" || email.trim() === "" || mesaj.trim() === "") {
+            alert("Lütfen tüm alanları doldurun.");
+            return false; // Formun gönderilmesini engelle
+        }
+
+        // Form verilerini göndermek için bir form oluştur
+        var form = document.createElement("form");
+        form.setAttribute("method", "post");
+        form.setAttribute("action", "iletişimsonuç.php");
+
+        // İsim Soyisim alanı
+        var isimSoyisimField = document.createElement("input");
+        isimSoyisimField.setAttribute("type", "hidden");
+        isimSoyisimField.setAttribute("name", "isimSoyisim");
+        isimSoyisimField.setAttribute("value", isimSoyisim);
+        form.appendChild(isimSoyisimField);
+
+        // Email alanı
+        var emailField = document.createElement("input");
+        emailField.setAttribute("type", "hidden");
+        emailField.setAttribute("name", "email");
+        emailField.setAttribute("value", email);
+        form.appendChild(emailField);
+
+        // Mesaj alanı
+        var mesajField = document.createElement("input");
+        mesajField.setAttribute("type", "hidden");
+        mesajField.setAttribute("name", "mesaj");
+        mesajField.setAttribute("value", mesaj);
+        form.appendChild(mesajField);
+
+        // Formu sayfaya ekle ve gönder
+        document.body.appendChild(form);
+        form.submit();
+
+        return false; // Default form gönderme işlemini engelle
+ }
+
+/*----clear----*/
+function clearForm() {
+  document.getElementById("iletişimform").reset();
+}
+
+
+// script.js
+
+const axios = require('axios');
+
+const options = {
+  method: 'GET',
+  url: 'https://free-football-soccer-videos.p.rapidapi.com/',
+  headers: {
+    'X-RapidAPI-Key': '70b4072dc3mshf471733789facfbp1b8d1fjsnd0171c6fa497',
+    'X-RapidAPI-Host': 'free-football-soccer-videos.p.rapidapi.com'
+  }
+};
+
+axios.request(options)
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.error(error);
+  });

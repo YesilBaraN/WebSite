@@ -1,0 +1,99 @@
+<html lang="tr">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:slnt@-4&family=Roboto:wght@300&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXqP6hMVIv/lBuvqO6P3y" crossorigin="anonymous">
+  <title>Ana Sayfa</title>
+</head>
+<header class="navbar_header">
+  <nav class="navbar">
+    <div class="logo">
+      <h2><a href="#">Baran Yeşilyurt</a></h2>
+    </div>
+    <div id="menu_bar">
+      <i class="fas fa-bars" id="menu_icon"></i>
+    </div>
+    <ul class="nav_links">
+      <li><a href="html.html">HAKKINDA</a></li>
+      <li><a href="OzgecmisCV.html">ÖZGEÇMİŞ</a></li>
+      <li><a href="şehrim.html">ŞEHRİM</a></li>
+      <li><a href="takimimiz.html">MİRAZSIMIZ</a></li>
+      <li><a href="ilgialanlarım.html">İLGİ ALANLARIM</a></li>
+      <li><a href="iletişim.html">İLETİŞİM</a></li>
+      <li><a href="giriş.html">LOG IN</a></li>
+    </ul>
+  </nav>
+</header>
+<body class="iletişim_body">
+   <section id="iletişim">
+    <div class="container_iletişim">
+        <h1 class="başlık_iletişim">İletişim</h1>
+         <div class="iletişim_area">
+                <div class="iletişim_sol">
+                    <div class="iletişim_üst">
+                        <div class="iletişim_elemanları">
+                         <i class="far fa-address-card"></i>
+                         <a><address>Kocaeli/Türkiye</address></a>
+                        </div>
+                        <div class="iletişim_elemanları">
+                            <i class="far fa-envelope"></i>
+                            <a herf="mailto:yesilyurtbaran41@gmail.com">yesilyurtbaran41@gmail.com</a>
+                        </div>
+                        <div class="iletişim_elemanları">
+                            <i class="fas fa-phone-alt"></i>
+                            <a herf="tel:+90 546 636 5992">+90 546 636 5992</a>
+                        </div>
+                    </div>
+                    <div class="iletişim_alt">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a> 
+                        <a href="#"><i class="fab fa-twitter"></i></a> 
+                        <a href="#"><i class="fab fa-instagram"></i></a> 
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a> 
+                    </div>
+                </div>
+                <div class="iletişim_sağ">
+                    <form id="iletişimform" action="iletişimsonuç.php" method="post">
+                        <input type="text" name="isimSoyisim" v-model="isimSoyisim" placeholder="İsim Soyisim">
+                        <input type="email" name="email" v-model="email" placeholder="Email">
+                        <textarea name="mesaj" v-model="mesaj" rows="10" placeholder="Mesaj..."></textarea>
+                        <div class="tooltip">
+                          <button type="submit"   onclick="validateFormJS()" name="submit1">Gönder</button>
+                          <span class="tooltiptext">Formu gönderir javascript</span>
+                      </div>
+                      <div class="tooltip">
+                          <button type="submit"  @click="validateFormVue()" name="submit2">Gönder</button>
+                          <span class="tooltiptext">Formu gönderir vue js</span>
+                      </div>
+                      <div class="tooltip">
+                          <button type="button" onclick="clearForm()">Temizle</button>
+                          <span class="tooltiptext">Formu temizler</span>
+                    </form>
+                </div>
+            </div>
+        </div>
+   </section>
+ </body>
+ <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script>
+    new Vue({
+        el: '#iletisimForm',
+        methods: {
+            validateFormVue: function() {
+                var isimSoyisim = this.$refs.isimSoyisim.value;
+                var email = this.$refs.email.value;
+                var mesaj = this.$refs.mesaj.value;
+
+                if (isimSoyisim.trim() === "" || email.trim() === "" || mesaj.trim() === "") {
+                    alert("Lütfen tüm alanları doldurun.");
+                    return false; // Formun gönderilmesini engelle
+                }
+
+                return true; // Formu gönder
+            }
+        }
+    });
+</script>
+<script src="js/script"></script>
+</html>

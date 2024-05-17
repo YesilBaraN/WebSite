@@ -1,0 +1,55 @@
+<html lang="tr">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:slnt@-4&family=Roboto:wght@300&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXqP6hMVIv/lBuvqO6P3y" crossorigin="anonymous">
+  <title>Ana Sayfa</title>
+</head>
+
+  <header class="navbar_header">
+    <nav class="navbar">
+      <div class="logo">
+        <h2><a href="#">Baran Yeşilyurt</a></h2>
+      </div>
+      <div id="menu_bar">
+        <i class="fas fa-bars" id="menu_icon"></i>
+      </div>
+      <ul class="nav_links">
+        <li><a href="html">HAKKINDA</a></li>
+        <li><a href="OzgecmisCV">ÖZGEÇMİŞ</a></li>
+        <li><a href="şehrim">ŞEHRİM</a></li>
+        <li><a href="mirasımız.html">MİRAZSIMIZ</a></li>
+        <li><a href="ilgialanlarım.html">İLGİ ALANLARIM</a></li>
+        <li><a href="iletişim.html">İLETİŞİM</a></li>
+        <li><a href="logın.html">LOG IN</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<body class="login_body"> 
+  <div class="container_login">
+    <div class="login-box">
+      <header class="başlık_giriş">
+  <h1>Giriş Yap</h1>
+</header>
+        <form name="loginForm" action="php/login.php" method="post">
+            <div class="input-box">
+                <input type="email" name="username" required>
+                <label>Kullanıcı Adı</label>
+            </div>
+            <div class="input-box">
+                <input type="password" name="password" required>
+                <label>Şifre</label>
+            </div>
+            <button type="submit">
+                Giriş Yap
+            </button>
+        </form>
+    </div>
+  </div>
+ 
+</body>
+<script src="js/script"></script>
+</html>

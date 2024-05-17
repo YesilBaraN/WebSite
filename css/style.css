@@ -7,7 +7,9 @@ html {
   
 }
 
-
+.body_navbar{
+  background-color: #002a43;
+}
 
 .roboto-light {
   font-family: "Roboto", sans-serif;
@@ -20,42 +22,24 @@ html {
   margin: 0;
   box-sizing: border-box;
   list-style: none;
- 
+  text-decoration: none;
 }
 
 img {
-  max-width: 100%; /* Görüntülerin taşma yapmasını önle */
+  max-width: auto; /* Görüntülerin taşma yapmasını önle */
   height: auto; /* Oranları koruyarak görüntülerin boyutunu ayarla */
 }
 
-section {
-  padding: 100px 0;
- 
-}
 
-.section_title {
-  margin-bottom: 30px;
-}
-
-.section_title h2 {
-  position: relative;
-  text-align: center;
-  color: #000000;
-  font-size: 30px;
-  transition: all 0.3s ease-in-out;
-}
-
-.section_title h2:hover {
-  background: #5f5f60;
-}
 
 /* HEADER */
-header {
+.navbar_header {
   height: 40px;
-  background: #ffffa4;
-  border-bottom: 2px solid rgba(255, 0, 0, 0.801);
+  background:#122866 ; /* Replace with your desired color */
+  border-bottom: 2px solid #1aaead;
   position: fixed;
   width: 100%;
+  height: 50px;
   z-index: 3;
 }
 
@@ -64,9 +48,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
+  margin:10px ;
   width: 100%; /* Full width on large screens */
-  padding: 15px 0;
+
   text-align: center;
 }
 
@@ -76,121 +60,110 @@ header {
 
 .nav_links li {
   margin-left: 20px; /* Boşluk eklemek için */
+  margin-bottom: 15px;
 }
 
 .nav_links li a {
   text-align: center;
-  color: #000;
+  color: #f9f4f4; /* Fixed white color for readability against any background */
   padding: 5px 15px;
   border-radius: 5px;
   transition: all 0.5s ease-in-out;
+  font-weight: bold; /* Add some boldness for a more prominent look */
 }
 
 .nav_links li a:hover {
-  background-color: #ff0080;
+  background-color: #008195; /* Hover effect color remains the same */
 }
 
 .logo h2 a {
   margin-left: 20px;
-  color: #000;
+  color: #ffffff; /* Fixed white color for readability against any background */
   text-transform: uppercase;
 }
 
-/* Metin Ortalama */
-.nav_links li a {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 5%;
+/* Responsiveness (Media Queries) */
+@media (max-width: 768px) {
+  .nav_links {
+    flex-direction: column; /* Stack links vertically on smaller screens */
+    align-items: center; /* Center links horizontally */
+  }
+
+  .nav_links li {
+    margin: 10px 0; /* Adjust spacing between links on smaller screens */
+  }
 }
 
+
+/* Kendimi Tanıtma */
 /* Kendimi Tanıtma */
 .about-section {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  padding: 16px;
+}
+
+.container {
+  max-width: 1200px; /* Adjust this based on your preference */
+  width: 100%;
+  padding: 0 16px;
+  box-sizing: border-box;
 }
 
 .card-container {
-  
   display: grid; /* Kartları grid'de düzenleyin */
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Her sütunun minimum genişliğini 300px olarak ayarlayın ve kalan alanı eşit şekilde dağıtın */
   gap: 20px; /* Kartlar arasına boşluk ekleyin */
 }
 
-
-
 .card {
-  flex: 1;
-  width: calc(70% - 20px); /* Kartların genişliğini dörtte biri kadar ayarla */
-  margin-bottom: 20px; /* Kartlar arasına boşluk ekle */
+  margin: 40px;
   background-color: #f0f0f0;
   padding: 20px;
   border-radius: 10px;
   box-sizing: border-box;
   overflow: hidden; /* Kartın içeriğinin taşmasını engelle */
+  display: flex;
+  flex-direction: column;
 }
-
-.card:last-child {
-  margin-right: 0; /* Son kartın sağ kenar boşluğunu kaldır */
-}
-
 
 .card-img-top {
- 
   width: 100%; /* Resmi kartın genişliğine sığacak şekilde ayarla */
-  height: px; /* Resmin yüksekliğini sabit tut */
+  height: auto; /* Resmin yüksekliğini otomatik tut */
   border-radius: 10px 10px 0 0; /* Yalnızca üst kenarlara yuvarlaklık ekle */
 }
 
 .card-body {
-  border-radius:0 0 10px 10px ;
   background-color: #cc9b9b;
   padding: 20px;
-  
+  border-radius: 0 0 10px 10px;
+  flex: 1;
 }
 
 .card-title {
-  
   text-align: center;
   padding: 2%;
   margin-bottom: 10px; /* Başlık ile metin arasına boşluk ekleyin */
-  font-size: 95%; /* Başlık font boyutunu ayarla */
-  
-}
-.card-body p{
-  margin-bottom: 0;
+  font-size: 1.5rem; /* Başlık font boyutunu ayarla */
 }
 
 .card-text {
   line-height: 1.5; /* Metnin satır aralığını ayarla */
   text-align: left;
-  font-size: 14px; /* Metin font boyutunu ayarla */
+  font-size: 1rem; /* Metin font boyutunu ayarla */
   margin-top: 10px; /* Metin ile fotoğraf arasına boşluk ekleyin */
-  flex: 1; /* Metnin fotoğrafın altında kalan alanı doldurmasını sağlayın */
-}
-.card-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
 }
 
-.card-table td {
-  width: 25%; /* Eşit sütun genişliği için */
-  padding: 10px;
-  vertical-align: top;
+@media (max-width: 770px) {
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-text {
+    font-size: 0.875rem;
+  }
 }
 
-table {
-  width: 50%;
-  border-collapse: collapse;
-}
-
-th, td {
-  width: 50%;
-  padding: 10px;
-  vertical-align: top;
-}
 /*------------HEADER---------------*/
 @media screen and (max-width: 770px) {
   .navbar {
@@ -205,7 +178,7 @@ th, td {
     display: none; /* Küçük ekranlarda menüyü gizle */
     flex-direction: column;
     position: absolute;
-    background: #ffffa4;
+    background: #122866;
     width: 100%;
     left: 0;
     padding: 0;
@@ -213,7 +186,7 @@ th, td {
   }
 
   .nav_links li a {
-    border-bottom: 1px solid #00ff33;
+    border-bottom: 1px solid #1aaead;
     display: block;
     padding: 10px 0;
     margin: 0 20px;
@@ -226,25 +199,13 @@ th, td {
 
   #menu_icon {
     display: block; /* Küçük ekranlarda menü ikonunu göster */
-    color: #00ff33;
+    color: #1aaead;
     position: absolute;
     right: 5%;
-    top: 20px;
+    top: 10px;
     cursor: pointer;
     z-index: 9999; /* Menü ikonunu en üstte göster */
   }
-   /* Yazı boyutunu küçült */
-   .card-title {
-   
-    font-size: calc(18px * 0.8);
-  }
-
-  .card-text {
-    font-size: calc(14px * 0.8);
-  }
-
-
-
 }
 
 @media screen and (min-width: 771px) {
@@ -262,248 +223,131 @@ th, td {
 }
 
 
+/*------ÖZGEÇMİŞCV----------*/
 .container_cv {
-  width: 70%;
-  height: 80%;
-  margin: 150px 100px 100px 150px;
+  width: 90%; /* Ekran genişliğinin %90'ı */
+  height: auto; /* Otomatik yükseklik */
+  padding: 150px;
+  margin: 0 20px 20px 20px auto; /* Yatayda ortala, üstten ve alttan 20px boşluk */
   display: flex;
   justify-content: center; /* İçeriği yatayda ortala */
 }
 
+.dikdortgen_sol, .dikdortgen_sağ {
+  flex: 1; /* Her iki dikdörtgen de eşit genişlikte */
+}
+
+/* Sol Dikdörtgen */
 .dikdortgen_sol {
- position: relative;
   border-radius: 10px 0 0 10px;
-  width: 90%;
-  height: 800px;
   background-color: rgb(5, 166, 219);
   box-sizing: border-box;
-  display:inline-flex;
-  
-
+  display: flex;
+  flex-direction: column; /* Öğeleri dikey olarak sırala */
+  align-items: center; /* Öğeleri yatayda ortala */
+  padding: 20px;
 }
-
-.dikdortgen_sağ {
-  border-radius: 0 10px 10px 0;
-  width: 300%;
-  background-color: #b09898;
-}
-
 
 .profil_foto {
-
-  margin-top: 20px;
-  width: 55%;
-  height: 30%;
+  width: 70%; /* Ekran genişliğinin %70'i */
+  height: auto; /* Otomatik yükseklik */
   border-radius: 50%;
-  object-fit: fill;
-  position: relative;
-  top: -80px;
-  left:23%;
-  border: 5px solid white;
-}
-
-.iletişim_bilgileri {
-  position: relative;
-  top: 200px;
-  transform: translateX(-50%);
-
-
+  object-fit: cover; /* Resmi orantılı bir şekilde kes */
+  margin-bottom: 20px;
 }
 
 .iletişim_bilgileri ul li {
-
-  margin-bottom: 5px; /* Burada boşluk ekleyin */
+  margin-bottom: 10px; /* Burada boşluk ekleyin */
 }
 
 .iletişim_yazı {
   border-bottom: 1px solid #000000; /* Başlık altına çizgi ekle */
-  margin-bottom: 10px;
-  font-size: 250%;
-
+  margin-bottom: 15px;
+  font-size: 1.5vw;
 }
 
 .icon {
-  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .text_iletişim {
   padding-left: 2px;
-  font-size: 150%;
+  font-size: 1.2vw;
 }
 
-.diller{
-  font-size: 250%;
+.diller, .yetenekler {
   border-bottom: 1px solid #000000; /* Başlık altına çizgi ekle */
-  margin-top: 30px;
-  margin-bottom: 10px;
-  margin-left: 20p;
- 
+  margin-bottom: 15px;
+  font-size: 1.3vw;
 }
 
-.text_diller {
-  font-size: 12px; /* Yazı boyutunu ayarla */
+.text_diller, .text_yetenekler {
+  font-size: 1vw; /* Yazı boyutunu ayarla */
   text-align: center; /* Metni ortala */
 }
 
-
-
-.yetenekler{
-  font-size: 250%;
-  border-bottom: 1px solid #000000; /* Başlık altına çizgi ekle */
-  margin-top: 30px;
-  margin-bottom: 10px;
-  margin-left: 20p;
- 
+/* Sağ Dikdörtgen */
+.dikdortgen_sağ {
+  border-radius: 0 10px 10px 0;
+  background-color: #b09898;
+  padding: 20px;
 }
-
-.text_yetenekler{
-  font-size: 12px; /* Yazı boyutunu ayarla */
-  text-align: left; /* Metni ortala */
-}
-
-
 
 .kişi_bilgsi {
-  font-size: 250%;
-  margin-top: 40px;
+  font-size: 1.7vw;
   text-align: left; /* Metni sola dayalı yap */
-  margin-left: 40px;
-  
 }
 
-
 .unvan {
-
-  font-weight: 100;
-  margin-top: -20px;
-  display: flex;
+  font-weight: normal;
+  margin-top: -10px;
   font-style: italic; /* Unvanı italik yap */
-  
 }
 
 .hakkında_başlık {
   border-bottom: 1px solid #000000; /* Başlık altına çizgi ekle */
-  margin-bottom: 10px;
-  margin-left: 40px;
+  margin-bottom: 15px;
   font-size: 1.5vw;
 }
 
-.hakkında_text{
-  margin-right: 20px;
-  font-style:normal;
+.hakkında_text {
   font-size: 1.3vw;
-  margin-left: 50px;
-
+  text-align: justify; /* Metni ikiye ayır */
 }
 
-.eğitim_başlık{
-  margin-top: 50px;
+.eğitim_başlık, .sertifika_başlık {
   border-bottom: 1px solid #000000; /* Başlık altına çizgi ekle */
-  margin-bottom: 10px;
-  margin-left: 40px;
+  margin-bottom: 15px;
   font-size: 1.5vw;
 }
 
-.eğitim_text{
-  margin-right: 20px;
-  font-style:normal;
+.eğitim_text, .sertifika_text {
+  text-align: left; /* Metni sola dayalı yap */
   font-size: 1.3vw;
-  
-
 }
-.lise_yıl{
-  margin-left: 50px;
-  font-weight: 100;
+
+.lise_yıl, .üni_yıl, .sertifika_yıl {
+  font-weight: normal;
   margin-right: 10px;
 }
-.üniversite{
-  margin-top: 10px;
-}
-.üni_yıl{
 
- margin-left: 50px;
- font-weight: 100;
- margin-right: 14px;
-
-}
-.üni_bölüm{
+.üni_bölüm, .sertifika_alan {
   font-style: italic;
-  font-weight: 50;
-  margin-left:150px ;
+  font-weight: bold;
 }
 
-
-.sertifika_başlık{
-  margin-top: 50px;
-  border-bottom: 1px solid #000000; /* Başlık altına çizgi ekle */
-  margin-bottom: 10px;
-  margin-left: 40px;
-  font-size: 1.5vw;
-
-}
-
-.sertifika_text{
-  margin-right: 20px;
-  font-style:normal;
-  font-size: 1.3vw;
-
-}
-
-.sertifika_yıl{
- margin-left: 50px;
- font-weight: 100;
- margin-right: 14px;
-
-}
-
-
-.sertifika_alan{
-  font-style: italic;
-  font-weight: 50;
-margin-left: 84px;
-}
-
-.slider-container {
-  max-width: 800px;
-  margin: 50px auto;
-  overflow: hidden;
-  position: relative;
-}
-
-.slider {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-  min-width: 100%;
-  overflow: hidden;
-}
-
-.slide img {
-  width: 100%;
-  height: auto;
-}
-
-.caption {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-/* Responsive */
-@media screen and (max-width: 600px) {
-  .slide {
-    min-width: 100vw;
+@media (max-width: 768px) {
+  .dikdortgen_sol, .dikdortgen_sağ {
+    flex-direction: column; /* Öğeleri dikey olarak sırala */
   }
 
-  .caption {
-    font-size: 12px;
-    padding: 3px 6px;
+  .profil_foto {
+    width: 100%; /* Ekran genişliğinin %100'ü */
+    margin-bottom: 15px;
+  }
+
+  .hakkında_text {
+    text-align: left; /* Metni sola dayalı yap */
   }
 }
 
@@ -520,7 +364,7 @@ img {
 .slideshow-container {
   width: 100%;
   position: relative;
-  margin-top: 40px;
+  padding-top: 50px;
   overflow: hidden;
   height: auto;
   
@@ -611,24 +455,28 @@ img {
   }
 }
 
+.body_şehrimiz{
+  background: #006394;
 
+
+}
 .container_şehrimiz {
-  background-image: url();
+  background-color: #002a43 ;
   max-width: 800px; /* Container genişliği */
   margin: 20px; /* Ortala */
   padding: 20px; /* Kenar boşlukları */
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Gölge */
+  box-shadow: 0 0 10px rgba(200, 21, 255, 0.1); /* Gölge */
 }
 
 .container_şehrimiz h2 {
-  color: #333; /* Başlık rengi */
+  color: #fff; /* Başlık rengi */
   font-size: 24px; /* Başlık boyutu */
   margin-bottom: 10px; /* Başlık alt boşluk */
 }
 
 .container_şehrimiz p {
-  color: #cc0e0e; /* Metin rengi */
+  color: #fff; /* Metin rengi */
   font-size: 16px; /* Metin boyutu */
   line-height: 1.6; /* Satır aralığı */
 }
@@ -671,7 +519,7 @@ img {
 /*--------iletişim---------*/
 
 .iletişim_body{
-  background-color: #234860;
+ background-color: #002a43;
 }
 
 #iletişim {
@@ -686,6 +534,7 @@ img {
 }
 
 .başlık_iletişim {
+  padding-top: 70px;
   font-size: 4rem;
   text-align: center;
   margin-bottom: 3rem;
@@ -808,111 +657,243 @@ img {
   background-color: #ffffff;
 }
 
+/*----------GİRİŞ SAYFASI--------------*/
 
+.başlık_giriş {
+  
+  padding: 40px;
+  text-align: center;
+}
+.başlık_giriş h1 {
+  font-size: 250%;
+  color: #333;
+  animation: fadeInDown 1s ease-out;
+}
+@keyframes fadeInDown {
+  0% {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
 
-
-body.login_body {
+.login_body {
   display: flex;
   justify-content: center;
   height: 100vh;
-  background: #141414;
-  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  background: linear-gradient(120deg, #f5f5f5, #c3cfe2);
 }
 
+
 .container_login {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 100%;
+  opacity: 0; /* Sayfa yüklenirken gizle */
+  animation: fadeIn 1s ease-in forwards; /* Giriş animasyonu */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Opaklığı 0 olarak ayarla */
+  }
+  to {
+    opacity: 1; /* Opaklığı 1'e kadar artır */
+}
 }
 
 .login-box {
-  position: relative;
-  width: 300px;
-  padding: 40px;
-  background: rgba(0, 0, 0, 0.8);
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
+  background: #fff;
+    padding: 40px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: popIn 0.5s ease-out;
+    transition: transform 0.3s; /* Boyut değişiminde animasyon geçişi */
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.8); /* Beyaz bir ışık efekti */
 }
+
+
+
+@keyframes popIn {
+  0% {
+      transform: scale(0.8);
+      opacity: 0;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+@keyframes pop {
+  0% {
+      transform: scale(0.8);
+      opacity: 0;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+.login-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05); /* Hover durumunda boyutu büyüt */
+}
+
 
 .login-box h2 {
-  margin-bottom: 30px;
-  color: #fff;
+  margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
 }
 
-.user-box {
+.input-box {
   position: relative;
+  margin-bottom: 30px;  
+}
+.input-box input:hover {
+  border-color: #555; /* Hover durumunda border rengini değiştir */
 }
 
-.user-box input {
+
+
+.input-box input {
   width: 100%;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
-  margin-bottom: 30px;
+  padding: 10px 10px 10px 0;
   border: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: 2px solid #333;
   outline: none;
   background: transparent;
+  color: #333;
+  font-size: 16px;
+  transition: all 0.3s;
 }
-
-.user-box label {
+.input-box label {
   position: absolute;
   top: 0;
   left: 0;
   padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
   pointer-events: none;
-  transition: 0.5s;
+  transition: all 0.3s;
+  color: #666;
 }
 
-.user-box input:focus ~ label,
-.user-box input:valid ~ label {
+.input-box input:focus + label,
+.input-box input:valid + label {
   top: -20px;
   left: 0;
-  color: #03e9f4;
+  color: #333;
   font-size: 12px;
 }
 
+
 button {
-  background: transparent;
-  border: none;
-  outline: none;
-  color: #03e9f4;
-  background: #03e9f4;
+  background: #333;
+  color: #fff;
   padding: 10px 20px;
-  cursor: pointer;
+  border: none;
   border-radius: 5px;
-  font-size: 16px;
-  transition: 0.5s;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  color: #fff; /* Buton metin rengi */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hafif bir gölge efekti */
 }
+
 
 button:hover {
-  background: #03a9f4;
+  background: #555;
+  transform: translateY(-2px);
+  transform: scale(1.05);
+  background: #555; /* Hover durumunda arka plan rengini değiştir */
+  color: #fff; /* Hover durumunda metin rengini değiştir */
+  
+}
+
+.button:active {
+  transform: scale(0.95); /* Tıklama anında boyutu biraz küçült */
+  box-shadow: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .login-box {
+      padding: 30px;
+  }
+
+  .login-box h2 {
+      font-size: 20px;
+  }
+
+  .input-box input {
+      font-size: 14px;
+  }
+
+  button {
+      padding: 8px 16px;
+  }
+
+  header h1 {
+      font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-box {
+      padding: 20px;
+  }
+
+  .login-box h2 {
+      font-size: 18px;
+  }
+
+  .input-box input {
+      font-size: 12px;
+  }
+
+  button {
+      padding: 6px 12px;
+  }
+
+  header h1 {
+      font-size: 24px;
+  }
+}
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
   color: #fff;
-}
-
-.spinner {
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: -1;
-  animation: rotate 10s linear infinite;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
-@keyframes rotate {
-  0% {
-      transform: rotate(0deg);
-  }
-  100% {
-      transform: rotate(360deg);
-  }
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
