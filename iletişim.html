@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:slnt@-4&family=Roboto:wght@300&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXqP6hMVIv/lBuvqO6P3y" crossorigin="anonymous">
-  <title>Ana Sayfa</title>
+  <title>İletişim</title>
 </head>
 <header class="navbar_header">
   <nav class="navbar">
@@ -19,8 +19,8 @@
       <li><a href="html.html">HAKKINDA</a></li>
       <li><a href="OzgecmisCV.html">ÖZGEÇMİŞ</a></li>
       <li><a href="şehrim.html">ŞEHRİM</a></li>
-      <li><a href="takimimiz.html">MİRAZSIMIZ</a></li>
-      <li><a href="ilgialanlarım.html">İLGİ ALANLARIM</a></li>
+      <li><a href="takimimiz.html">TAKIMIMIZ</a></li>
+      <li><a href="ilgialanlarım.php">İLGİ ALANLARIM</a></li>
       <li><a href="iletişim.html">İLETİŞİM</a></li>
       <li><a href="giriş.html">LOG IN</a></li>
     </ul>
@@ -59,13 +59,14 @@
                         <input type="email" name="email" v-model="email" placeholder="Email">
                         <textarea name="mesaj" v-model="mesaj" rows="10" placeholder="Mesaj..."></textarea>
                         <div class="tooltip">
-                          <button type="submit"   onclick="validateFormJS()" name="submit1">Gönder</button>
-                          <span class="tooltiptext">Formu gönderir javascript</span>
+                          <button type="button"   @click="kontrolJS" name="submit1">Gönder js</button>
+                          <span class="tooltiptext">Formu kontrol eder ve gönderir javascript</span>
                       </div>
                       <div class="tooltip">
-                          <button type="submit"  @click="validateFormVue()" name="submit2">Gönder</button>
-                          <span class="tooltiptext">Formu gönderir vue js</span>
+                          <button type="button"  @click="kontrolVue" name="submit2">Gönder vue.js</button>
+                          <span class="tooltiptext">Formu kontrol eder ve gönderir vue js</span>
                       </div>
+                     
                       <div class="tooltip">
                           <button type="button" onclick="clearForm()">Temizle</button>
                           <span class="tooltiptext">Formu temizler</span>
@@ -77,23 +78,79 @@
  </body>
  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 <script>
-    new Vue({
-        el: '#iletisimForm',
+ new Vue({
+        el: '#iletişimform',
+        data: {
+            isimSoyisim: '',
+            email: '',
+            mesaj: ''
+        },
         methods: {
-            validateFormVue: function() {
-                var isimSoyisim = this.$refs.isimSoyisim.value;
-                var email = this.$refs.email.value;
-                var mesaj = this.$refs.mesaj.value;
-
-                if (isimSoyisim.trim() === "" || email.trim() === "" || mesaj.trim() === "") {
-                    alert("Lütfen tüm alanları doldurun.");
-                    return false; // Formun gönderilmesini engelle
+            kontrolVue() {
+                // Vue.js ile form kontrolü
+                if (this.isimSoyisim === '' || this.email === '' || this.mesaj === '') {
+                    alert('Lütfen tüm alanları doldurun.vue.js');
+                } else if (!this.validEmail(this.email)) {
+                    alert('Lütfen geçerli bir email adresi girin.vue.js');
+                } else {
+                    // Formu gönder
+                    document.getElementById('iletişimform').submit();
                 }
-
-                return true; // Formu gönder
+            },
+            validEmail(email) {
+                // Email adresinin geçerli olup olmadığını kontrol etme
+                var re = /\S+@\S+\.\S+/;
+                return re.test(email);
             }
         }
     });
+
+
+    function kontrolJS() {
+        // JavaScript ile form kontrolü
+        var isimSoyisim = document.getElementsByName('isimSoyisim')[0].value;
+        var email = document.getElementsByName('email')[0].value;
+        var mesaj = document.getElementsByName('mesaj')[0].value;
+
+        if (isimSoyisim === '' || email === '' || mesaj === '') {
+            alert('Lütfen tüm alanları doldurun.js');
+        } else if (!validEmail(email)) {
+            alert('Lütfen geçerli bir email adresi girin.js');
+        } else {
+           
+            // Formu gönder
+            document.getElementById('iletişimform').submit();
+        }
+    }
+
+    function validEmail(email) {
+        // Email adresinin geçerli olup olmadığını kontrol etme
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+    function clearForm() {
+        // Formu temizle
+        document.getElementById('iletişimform').reset();
+    }
+
+    function kontrol() {
+        // JavaScript ile form kontrolü
+        var isimSoyisim = document.getElementsByName('isimSoyisim')[0].value;
+        var email = document.getElementsByName('email')[0].value;
+        var mesaj = document.getElementsByName('mesaj')[0].value;
+
+        if (isimSoyisim === '' || email === '' || mesaj === '') {
+            alert('Lütfen tüm alanları doldurun.');
+            return false; // Formun gönderilmesini engelle
+        } else if (!validEmail(email)) {
+            alert('Lütfen geçerli bir email adresi girin.');
+            return false; // Formun gönderilmesini engelle
+        }
+
+        // Formu gönder
+        return true;
+    }
 </script>
-<script src="js/script"></script>
+<script src="js/script.js"></script>
+
 </html>
